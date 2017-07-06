@@ -1,0 +1,26 @@
+{
+  "name": "git-stash-remote",
+  "version": "0.0.1",
+  "description": "TODO",
+  "bin": {
+    "stash-remote": "cli.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "xo & ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ti0ma/git-stash-remote.git"
+  },
+  "author": "ti0ma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ti0ma/git-stash-remote/issues"
+  },
+  "homepage": "https://github.com/ti0ma/git-stash-remote#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "execa": "^0.7.0"
+  }
+}
