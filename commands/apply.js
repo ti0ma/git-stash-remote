@@ -1,5 +1,6 @@
 const execa = require('execa');
 const GitHub = require('github-api');
+const project = require('../utils/project');
 
 function * apply(gistId) {
   console.log('gist', gistId);
@@ -7,11 +8,11 @@ function * apply(gistId) {
   const gist = gh.getGist(gistId); // not a gist yet
 
   const { data } = yield gist.read();
-  const { content } = data.files['1234.patch'];
-  console.log(content);
-  // TODO: aplicar el parche
+  // TODO: Improve this. Currently there is only one file.
+  const file = Object.keys(data.files).pop();
+  const { content } = data.files[file];
   yield execa.shell('git apply', {
-    input: content + '\n'
+    input: `${content}\n`
   });
   console.log('Done! :)');
 }

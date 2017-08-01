@@ -1,5 +1,6 @@
 const execa = require('execa');
 const GitHub = require('github-api');
+const project = require('../utils/project');
 
 function * create() {
   console.log('Creating new Gist');
@@ -15,7 +16,7 @@ function * create() {
     const createdGist = yield gist.create({
       public: true,
       files: {
-        '1234.patch': {
+        [project.filename]: {
           content
         }
       }

@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "xo & ava"
+    "test": "xo && ava"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,55 @@
   "homepage": "https://github.com/ti0ma/git-stash-remote#readme",
   "dependencies": {
     "co": "^4.6.0",
-    "execa": "^0.7.0"
+    "execa": "^0.7.0",
+    "project-name": "^0.2.6"
+  },
+  "devDependencies": {
+    "ava": "^0.20.0",
+    "xo": "^0.18.2"
+  },
+  "ava": {
+    "files": [
+      "**/*.spec.js"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "powerAssert": false
+  },
+  "xo": {
+    "space": true,
+    "rules": {
+      "no-unused-vars": [
+        "error",
+        {
+          "ignoreRestSiblings": true,
+          "args": "none"
+        }
+      ],
+      "no-warning-comments": [
+        0
+      ],
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "object-shorthand": [
+        "off"
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": [
+            "./"
+          ]
+        }
+      }
+    }
   }
 }
